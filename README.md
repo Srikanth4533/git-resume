@@ -1,70 +1,91 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Github Repositories listing page
 
-## Available Scripts
+This is a Github repositories listing page by passing the required Github username
 
-In the project directory, you can run:
 
-### `npm start`
+## API Reference
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### https://docs.github.com/en/rest/reference
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Get Users
 
-### `npm test`
+```http
+  GET /search/users
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `q` | `string` | **Required**. |
 
-### `npm run build`
+#### Get User
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```http
+  GET /users/${username}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `username`      | `string` | **Required**. username of user to fetch |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Get Repositories
 
-### `npm run eject`
+```http
+  GET /users/${username}/repos
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `username`      | `string` | **Required**. username of user to fetch repos |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Documentation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Documentation](https://linktodocumentation)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Pages
 
-### Code Splitting
+Homepage, ResultsPage, ProfilePage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Homepage , Profilepage
+Here after we fetch users and repos from the api UserProfile and His Repositories shown here with pagination with 8 repos per page.
 
-### Analyzing the Bundle Size
+#### ResultsPage
+After getting results from the api the search results for users is shown here
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Search Bar
+We can see search bar in the app to search for users and we will get the list of the users and from them we can choose the user. 
+## Tech Stack
 
-### Making a Progressive Web App
+**Client:** React, Redux, Styled Components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Run Locally
 
-### Deployment
+Clone the project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+  git clone https://github.com/Srikanth4533/git-resume.git
+```
 
-### `npm run build` fails to minify
+Go to the project directory
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
