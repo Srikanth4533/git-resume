@@ -1,5 +1,6 @@
 import axios from "axios"
 import {  
+    CLEAR_DATA,
     GET_USER_PROFILE_ERROR, 
     GET_USER_PROFILE_PENDING, 
     GET_USER_PROFILE_SUCCESS, 
@@ -62,5 +63,11 @@ export const setPPage = (value)  => {
     return {
         type: SET_P_PAGE,
         payload: value
+    }
+}
+
+export const clearData = () => {
+    return {
+        type: CLEAR_DATA
     }
 }

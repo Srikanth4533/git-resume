@@ -18,11 +18,15 @@ const Repos = (props) => {
   const lastIndex = props.currentPage * props.reposPerPage
   const firstIndex = lastIndex - props.reposPerPage
 
-  const newRepos = props.repos.slice(firstIndex, lastIndex)
+  const newRepos = props.repos && 
+                   props.repos.length > props.reposPerPage ? 
+                   props.repos.slice(firstIndex, lastIndex) : 
+                   props.repos
   return (
     <Container>
       <Content>
-        {props.loading && !props.user && <Loading height={300} />}
+        {props.loading && <Loading height={300} />}
+        {!props.loading && newRepos.length === 0 && <div>No Repos Found!...</div>}
         {!props.loading && 
           props.repos && 
           newRepos.map((repo) => {

@@ -29,8 +29,9 @@ const ProfilePagination = (props) => {
     <Container>
       <Content>
         {!props.loading &&
-          props.repos &&
-        <PagesContainer>
+          props.user &&
+          props.repos.length > 0 &&
+        (<PagesContainer>
         <Prev 
           size='2.3rem'
           onClick={() => dispatch(setPPage(-1))}
@@ -50,10 +51,12 @@ const ProfilePagination = (props) => {
           size='2.3rem'
           onClick={() => dispatch(setPPage(+1))}
         />
-        </PagesContainer>
+        </PagesContainer>)
         }
 
-      {!props.loading && (
+      {!props.loading &&
+        props.user &&
+        props.repos.length > 0 && (
         <Wrapper>
         <Older
           onClick={() => dispatch(setPPage(-1))}

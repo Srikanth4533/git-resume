@@ -27,6 +27,7 @@ const Home = () => {
             currentPage={currentPage}
           />
           <Pagination 
+            user={user}
             repos={repos}
             reposPerPage={reposPerPage}
             currentPage={currentPage}

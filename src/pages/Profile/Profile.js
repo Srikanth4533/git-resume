@@ -44,6 +44,7 @@ const Profile = () => {
           />
           <ProfilePagination
             loading={isReposLoading || isProfileLoading} 
+            user={userProfile}
             repos={data}
             reposPerPage={reposPerPage}
             currentPage={currentPage}

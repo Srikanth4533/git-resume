@@ -17,6 +17,7 @@ export const GET_USER_REPOS_SUCCESS = 'GET_USER_REPOS_SUCCESS'
 export const GET_USER_PROFILE_ERROR = 'GET_USER_ERROR'
 export const GET_USER_PROFILE_PENDING = 'GET_USER_PENDING'
 export const GET_USER_PROFILE_SUCCESS = 'GET_USER_SUCCESS'
+export const CLEAR_DATA = 'CLEAR_DATA'
 
 export const SET_P_PAGE = 'SET_P_PAGE'
 export const SET_CURRENT_P_PAGE = 'SET_CURRENT_P_PAGE'
@@ -92,6 +93,14 @@ function profileReducer(state = inititalState, action) {
                 return {
                     ...state,
                     currentPage: val
+                }
+
+            case CLEAR_DATA:
+                return {
+                    ...state,
+                    data: [],
+                    user: {},
+                    userProfile: {}
                 }
 
         default:

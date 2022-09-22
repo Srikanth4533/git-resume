@@ -29,6 +29,7 @@ const Pagination = (props) => {
     <Container>
       <Content>
         {!props.loading &&
+          props.user &&
           props.repos &&
         (<PagesContainer>
         <Prev 
@@ -53,7 +54,9 @@ const Pagination = (props) => {
         </PagesContainer>
         )}
 
-        {!props.loading && (
+        {!props.loading &&
+          props.user &&
+          props.repos && (
           <Wrapper>
           <Older
             onClick={() => dispatch(setPage(-1))}
