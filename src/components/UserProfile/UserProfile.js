@@ -24,7 +24,7 @@ const UserProfile = (props) => {
 
   return (
     <Container>
-      {props.loading && <Loading height={300} />}
+      {props.loading && !props.user && <Loading height={300} />}
         {!props.loading && props.user && 
         <Content>
           <ImageContainer>

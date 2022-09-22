@@ -29,6 +29,7 @@ const Pagination = (props) => {
     <Container>
       <Content>
         {!props.loading &&
+          props.repos &&
         (<PagesContainer>
         <Prev 
           size='2.3rem'

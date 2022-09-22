@@ -22,7 +22,7 @@ const Repos = (props) => {
   return (
     <Container>
       <Content>
-        {props.loading && <Loading height={300} />}
+        {props.loading && !props.user && <Loading height={300} />}
         {!props.loading && 
           props.repos && 
           newRepos.map((repo) => {
